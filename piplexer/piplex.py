@@ -19,7 +19,7 @@ class PipLexer(RegexLexer):
 
     tokens = {
         'root': [
-            (r' .*\n', Text),
-            (r'(^.*?)([\s-]{2})', bygroups(Generic.Heading, Text))
+            (r'(^[^\s][^.]*?)([\s-]{2})', bygroups(Generic.Strong, Text)),
+            (r'.*?\n', Text)
         ]
     }
