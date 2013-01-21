@@ -15,11 +15,11 @@ from pygments.token import *
 class PipLexer(RegexLexer):
     name = 'Pip'
     aliases = ['pip']
-    filenames = ['']
+    filenames = ['*.piplex']
 
     tokens = {
         'root': [
             (r' .*\n', Text),
-            (r'(^.*?)([\s-]{2})', bygroups(Package, Text))
+            (r'(^.*?)([\s-]{2})', bygroups(Generic.Heading, Text))
         ]
     }
